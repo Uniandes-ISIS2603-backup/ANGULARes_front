@@ -7,7 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
-import {CartComponent} from './carroCompras.component';
+import {CartSummaryComponent} from './carroCompras-summary/carroCompras-summary.component';
 
 import { CartService } from "./carroCompras.service";
 
@@ -24,9 +24,9 @@ import { CartService } from "./carroCompras.service";
         NgxPermissionsModule
     ],
     declarations: [
-        CartComponent
+        CartSummaryComponent
     ],
     providers: [CartService],
-    exports: [CartComponent]
+    exports: [CartSummaryComponent]
 })
 export class CartModule { }
