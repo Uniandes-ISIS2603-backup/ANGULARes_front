@@ -7,7 +7,7 @@ import { CartLine } from "./carroCompras";
 export class CartService {
 
     
-    public cart: Cart;
+    public cart: Cart=new Cart;
 
     addLine(book: Book, quantity: number = 1) {
         let line = this.cart.lines.find(line => line.book.id == book.id);
@@ -40,7 +40,7 @@ export class CartService {
         this.cart.cartPrice = 0;
         this.cart.lines.forEach(l => {
             this.cart.itemCount += l.quantity;
-            this.cart.cartPrice += (l.quantity * l.book.price);
+            this.cart.cartPrice += (l.quantity * l.book.precio);
         })
     }
 }

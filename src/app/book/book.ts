@@ -25,7 +25,7 @@ export class Book {
      * price of the book
      */
 
-     price: number
+     precio: number
 
     /**
     * The location of the book's image

@@ -11,6 +11,7 @@ import { EditorialDetailComponent } from '../editorial/editorial-detail/editoria
 import { AuthorDetailComponent } from '../author/author-detail/author-detail.component';
 import { AuthorListComponent } from '../author/author-list/author-list.component';
 import { BookDetailComponent } from '../book/book-detail/book-detail.component';
+import {CartDetailComponent} from '../carroCompras/carroCompras-detail/carroCompras-detail.component';
 import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
@@ -81,6 +82,10 @@ const routes: Routes = [
                 }
             }
         ]
+    },
+    {
+        path:'cart',
+        component:CartDetailComponent
     },
     {
         path: 'home',

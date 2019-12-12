@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {CartSummaryComponent} from './carroCompras-summary/carroCompras-summary.component';
+import { CartDetailComponent } from "./carroCompras-detail/carroCompras-detail.component";
 
 import { CartService } from "./carroCompras.service";
 
@@ -24,9 +25,9 @@ import { CartService } from "./carroCompras.service";
         NgxPermissionsModule
     ],
     declarations: [
-        CartSummaryComponent
+        CartSummaryComponent,CartDetailComponent
     ],
     providers: [CartService],
-    exports: [CartSummaryComponent]
+    exports: [CartSummaryComponent,CartDetailComponent]
 })
 export class CartModule { }
