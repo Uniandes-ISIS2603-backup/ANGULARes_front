@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
 
 /**
- * The app component. This component is the base of s4_servicios-Front
+ * The app component. This component is the base of the BookStore
  */
 @Component({
     selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
      * Assigns a title to the web page
      */
     ngOnInit(): void {
-        this.title = "s4_servicios-Front";
+        this.title = "Libros Angulares";
         this.authService.start();
     }
 
@@ -34,8 +34,3 @@ export class AppComponent implements OnInit {
     }
 
 }
-
-
-
-
-

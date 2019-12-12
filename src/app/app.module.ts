@@ -12,9 +12,10 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import {AuthorModule} from './author/author.module';
 import {AuthModule} from './auth/auth.module';
-import { AuthorListComponent } from './author/author-list/author-list.component';
-import { AuthorDetailComponent } from './author-detail/author-detail.component';
+import {BookModule} from './book/book.module';
+import {EditorialModule} from './editorial/editorial.module';
 
 
 
@@ -23,17 +24,19 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        AuthorListComponent,
-        AuthorDetailComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+		
         HttpClientModule,
         BrowserAnimationsModule,
+        AuthorModule,
         ModalDialogModule.forRoot(),
         AuthModule,
+        BookModule,
+        EditorialModule,
         FormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,
