@@ -17,15 +17,15 @@ import {AuthModule} from './auth/auth.module';
 import {BookModule} from './book/book.module';
 import {EditorialModule} from './editorial/editorial.module';
 import {CartModule} from "./carroCompras/carroCompras.module";
-
-
+import { HomeComponent } from './home/home.component';
 
 
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
