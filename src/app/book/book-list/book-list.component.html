@@ -1,7 +1,25 @@
   
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2" *ngFor = "let book of books">
+        <div class="col-md-2">
+            <h4>Filtrar por: </h4>
+        </div>
+        <div class="col-md-2">
+            <h6>Bestsellers: </h6>
+            <input type="checkbox" [(ngModel)]="bestsellerFilter" />
+        </div>
+        <div class="col-md-2">
+            <h6>Nuevos: </h6>
+            <input type="checkbox" [(ngModel)]="nuevoFilter" />
+        </div>
+        <div class="col-md-2">
+            <h6>Descuentos: </h6>
+            <input type="checkbox" [(ngModel)]="descuentoFilter" />
+        </div>
+            
+    </div>
+    <div class="row">
+        <div class="col-md-2" *ngFor = "let book of getFilteredBooks()">
             <figure class="figure" routerLink="/books/{{book.id}}" style="cursor: pointer;"> 
                 <div class="img-thumbnail border-0">                        
                     <img class="img-fluid" src='{{book.image}}' alt="{{book.name}}" />                                     

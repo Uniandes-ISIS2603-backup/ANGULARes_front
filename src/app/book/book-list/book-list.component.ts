@@ -17,6 +17,10 @@ export class BookListComponent implements OnInit {
     */
     @Input() books: Book[];
 
+    bestsellerFilter: boolean=false;
+    nuevoFilter: boolean=false;
+    descuentoFilter:boolean=false;
+
     /**
     * The component's constructor
     */
@@ -31,6 +35,20 @@ export class BookListComponent implements OnInit {
             .subscribe(books => {
                 this.books = books;
             });
+    }
+
+    getFilteredBooks(): Book[]{
+        let filteredBooks:Book[]=this.books;
+        if(this.bestsellerFilter==true){
+            filteredBooks=filteredBooks.filter(b => b.bestSeller);
+        }
+        if(this.nuevoFilter==true){
+            filteredBooks=filteredBooks.filter(b => b.esNuevo);
+        }
+        if(this.descuentoFilter==true){
+            filteredBooks=filteredBooks.filter(b => b.esDescuento);
+        }
+        return filteredBooks;
     }
 
     /**

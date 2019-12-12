@@ -42,4 +42,10 @@ export class Book {
     * The editorial of the book
     */
     editorial: Editorial;
+
+    bestSeller: boolean;
+
+    esNuevo: boolean;
+
+    esDescuento: boolean;
 }
