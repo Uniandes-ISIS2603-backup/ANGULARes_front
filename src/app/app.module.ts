@@ -16,6 +16,7 @@ import {AuthorModule} from './author/author.module';
 import {AuthModule} from './auth/auth.module';
 import {BookModule} from './book/book.module';
 import {EditorialModule} from './editorial/editorial.module';
+import {CartModule} from "./carroCompras/carroCompras.module";
 
 
 
@@ -36,6 +37,7 @@ import {EditorialModule} from './editorial/editorial.module';
         ModalDialogModule.forRoot(),
         AuthModule,
         BookModule,
+        CartModule,
         EditorialModule,
         FormsModule,
         ToastrModule.forRoot({

@@ -22,6 +22,12 @@ export class Book {
     description: string;
 
     /**
+     * price of the book
+     */
+
+     price: number
+
+    /**
     * The location of the book's image
     */
     image: string;
