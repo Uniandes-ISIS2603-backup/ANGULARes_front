@@ -6,3 +6,13 @@ body {
 
 
 
+.tangerine {   font-family: 'Tangerine';
+  font-size: 90px;  text-shadow: 4px 4px 4px #aaa; }
+.ultra {   font-family: 'Ultra';
+  font-size: 48px;  text-shadow: 2px 2px 4px #aaa; }
+.ribeye {   font-family: 'Ribeye';
+  font-size: 48px;  text-shadow: 2px 2px 4px #aaa; }
+.lobster {   font-family: 'Lobster';
+  font-size: 52px;  text-shadow: -2px -2px 5px #aaa; }
+.helvet {   font-family: 'Helvetica';
+  font-size: 48px;  text-shadow: -2px -2px 5px #aaa; }
