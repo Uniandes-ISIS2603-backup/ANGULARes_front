@@ -12,6 +12,7 @@ import { AuthorDetailComponent } from '../author/author-detail/author-detail.com
 import { AuthorListComponent } from '../author/author-list/author-list.component';
 import { BookDetailComponent } from '../book/book-detail/book-detail.component';
 import {CartDetailComponent} from '../carroCompras/carroCompras-detail/carroCompras-detail.component';
+import {CartCheckoutComponent} from '../carroCompras/carroCompras-checkout/carroCompras-checkout.component';
 import { HomeComponent } from '../home/home.component';
 import { ClientDetailComponent } from '../client/client-detail/client-detail.component';
 
@@ -96,6 +97,10 @@ const routes: Routes = [
     {
         path:'cart',
         component:CartDetailComponent
+    },
+    {
+        path:'checkout',
+        component:CartCheckoutComponent
     },
     {
         path: 'home',

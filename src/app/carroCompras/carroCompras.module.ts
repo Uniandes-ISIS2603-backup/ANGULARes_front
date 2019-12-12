@@ -9,6 +9,7 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {CartSummaryComponent} from './carroCompras-summary/carroCompras-summary.component';
 import { CartDetailComponent } from "./carroCompras-detail/carroCompras-detail.component";
+import {CartCheckoutComponent} from './carroCompras-checkout/carroCompras-checkout.component';
 
 import { CartService } from "./carroCompras.service";
 
@@ -25,9 +26,9 @@ import { CartService } from "./carroCompras.service";
         NgxPermissionsModule
     ],
     declarations: [
-        CartSummaryComponent,CartDetailComponent
+        CartSummaryComponent,CartDetailComponent,CartCheckoutComponent
     ],
     providers: [CartService],
-    exports: [CartSummaryComponent,CartDetailComponent]
+    exports: [CartSummaryComponent,CartDetailComponent,CartCheckoutComponent]
 })
 export class CartModule { }
