@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import {CartService} from './carroCompras/carroCompras.service';
+import {Book} from './book/book';
 
 /**
  * The app component. This component is the base of the BookStore
@@ -24,10 +26,14 @@ export class AppComponent implements OnInit {
         this.authService.start();
     }
 
+    addToCart(book: Book) {
+        this.cartService.addLine(book);
+        }
+
        /**
      * @ignore
      */
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService, private cartService: CartService) { }
 
     logout(): void {
         this.authService.logout()
