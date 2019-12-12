@@ -16,7 +16,8 @@ import { AuthSignUpComponent } from './auth-sign-up/auth-sign-up.component';
         HttpClientModule,
         CommonModule,
         FormsModule,
-        NgbModule
+        NgbModule,
+        
     ],
     declarations: [AuthLoginComponent, AuthSignUpComponent],
     providers: [AuthService],
