@@ -74,4 +74,8 @@ export class AuthService {
         localStorage.removeItem('role');
         this.router.navigateByUrl('/');
     }
+
+    getClientes(): Observable<Client[]>{
+        return this.http.get<Client[]>(API_URL + clientes);
+     }
 }

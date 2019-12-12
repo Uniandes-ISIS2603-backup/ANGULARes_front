@@ -18,6 +18,7 @@ import {BookModule} from './book/book.module';
 import {EditorialModule} from './editorial/editorial.module';
 import {CartModule} from "./carroCompras/carroCompras.module";
 import { HomeComponent } from './home/home.component';
+import { ClientModule } from './client/client.module';
 
 
 
@@ -30,7 +31,7 @@ import { HomeComponent } from './home/home.component';
     imports: [
         BrowserModule,
         AppRoutingModule,
-		
+		ClientModule,
         HttpClientModule,
         BrowserAnimationsModule,
         AuthorModule,
