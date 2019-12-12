@@ -1,6 +1,16 @@
 import { Component } from "@angular/core";
+import { CartService } from "../carroCompras.service";
 
 @Component({
-    template: `<div><h3 class="bg-info p-1 text-white">Cart Detail Component</h3></div>`
+    selector: "carro-compras-detail",
+    templateUrl:"carroCompras-detail.component.html"
 })
-export class CartDetailComponent {}
+export class CartDetailComponent {
+
+    constructor(public cartService: CartService){}
+
+    ngOnInit(): void{
+        this.cartService.start();
+    }
+
+}

@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.title = "Libros Angulares";
         this.authService.start();
+        this.cartService.start();
     }
 
     addToCart(book: Book) {
