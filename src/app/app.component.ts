@@ -27,9 +27,6 @@ export class AppComponent implements OnInit {
         this.cartService.start();
     }
 
-    addToCart(book: Book) {
-        this.cartService.addLine(book);
-        }
 
        /**
      * @ignore
