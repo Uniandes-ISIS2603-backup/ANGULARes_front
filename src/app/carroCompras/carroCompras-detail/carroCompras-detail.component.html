@@ -11,7 +11,7 @@
                 <thead>
                     <tr>
                         <th>Quantity</th>
-                        <th>Product</th>
+                        <th>Book</th>
                         <th class="text-right">Price</th>
                         <th class="text-right">Subtotal</th>
                     </tr>
@@ -27,19 +27,19 @@
                             <input type="number" class="form-control-sm"
                                 style="width:5em"
                                 [value]="line.quantity"
-                                (change)="cart.updateQuantity(line.product,
+                                (change)="cartService.updateQuantity(line.book,
                                 $event.target.value)" />
                         </td>
-                        <td>{{line.product.name}}</td>
+                        <td>{{line.book.name}}</td>
                         <td class="text-right">
-                            {{line.product.price | currency:"USD":true:"2.2-2"}}
+                            {{line.book.precio}}
                         </td>
                         <td class="text-right">
-                            {{(line.lineTotal) | currency:"USD":true:"2.2-2" }}
+                            {{(line.lineTotal) }}
                         </td>
                         <td class="text-center">
                             <button class="btn btn-sm btn-danger"
-                                (click)="cartService.cart.removeLine(line.product.id)">
+                                (click)="cartService.removeLine(line.book.id)">
                                 Remove
                             </button>
                         </td>
@@ -59,7 +59,7 @@
     <div class="row">
         <div class="col">
             <div class="text-center">
-                <button class="btn btn-primary m-1" routerLink="/books/list">
+                <button class="btn btn-primary m-1" [routerLink]="['/books/list']" [queryParams]="{allbooks: 'yes'}">
                     Continue Shopping
                 </button>
                 <button class="btn btn-secondary m-1" routerLink="/checkout"

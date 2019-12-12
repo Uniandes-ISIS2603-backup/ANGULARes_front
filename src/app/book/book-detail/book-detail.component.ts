@@ -9,6 +9,8 @@ import {BookDetail} from '../book-detail';
 import {BookReviewComponent} from '../book-reviews/book-review.component';
 import {BookAddReviewComponent} from '../book-add-review/book-add-review.component';
 
+import {CartService} from '../../carroCompras/carroCompras.service';
+
 @Component({
     selector: 'app-book-detail',
     templateUrl: './book-detail.component.html',
@@ -29,7 +31,8 @@ export class BookDetailComponent implements OnInit, OnDestroy {
         private modalDialogService: ModalDialogService,
         private router: Router,
         private viewRef: ViewContainerRef,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,
+        private cartService: CartService
     ) {
         //This is added so we can refresh the view when one of the books in
         //the "Other books" list is clicked
@@ -146,6 +149,11 @@ export class BookDetailComponent implements OnInit, OnDestroy {
         });
     }
 
+    addToCart(book: Book) {
+        this.cartService.addLine(book);
+        this.router.navigateByUrl("/cart");
+        }
+
     /**
     * The method which initilizes the component
     * We need to initialize the book and its editorial so that
@@ -156,6 +164,7 @@ export class BookDetailComponent implements OnInit, OnDestroy {
         this.bookDetail = new BookDetail();
         this.getBookDetail();
         this.getOtherBooks();
+        this.cartService.start();
     }
 
     /**

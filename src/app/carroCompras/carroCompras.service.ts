@@ -14,9 +14,11 @@ export class CartService {
         if(!c){
             this.cart=new Cart;
             localStorage.setItem('cart',JSON.stringify(this.cart));
+           
         }
         else{
             this.cart=JSON.parse(c);
+            console.log(c);
         } 
     }
 

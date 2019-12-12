@@ -7,9 +7,9 @@ export class Cart{
 }
 
 export class CartLine {
-    constructor(public book: Book,
-    public quantity: number) {}
-    get lineTotal() {
+    constructor(public book: Book,public quantity: number) {}
+
+    lineTotal() {
         return this.quantity * this.book.precio;
     }
 }
