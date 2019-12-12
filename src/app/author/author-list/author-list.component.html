@@ -1,1 +1,32 @@
-<p>author-list works!</p>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+            
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="h4">Author´s Name</th>    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let author of authors" >
+                            <td style="cursor: pointer;" (click)="onSelected(author.id)"> <dd>{{author.name}}</dd>
+                    </td>
+                    <td *ngxPermissionsOnly="['ADMIN']">
+                        <button class="btn btn-primary" (click)="showHideEdit(author.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
+                    <td *ngxPermissionsOnly="['ADMIN']">
+                        <button class="btn btn-danger" (click)="deleteAuthor(author.id)"><span class="fa fa-trash"></span></button>
+                    </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-8">
+                <div *ngIf="showView">
+                    <app-author-detail [authorDetail]="selectedAuthor"></app-author-detail>
+                </div>
+            </div>   
+        </div>
+    </div>
