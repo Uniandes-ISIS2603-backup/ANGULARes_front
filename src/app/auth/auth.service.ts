@@ -2,20 +2,29 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
+import { Client } from './client';
+import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
+const API_URL =  environment.apiURL;
+const clientes = '/clientes';
 /**
  * The service provider for everything related to authentication
  */
 @Injectable()
 export class AuthService {
 
+    httpOptions = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" })
+      };
     /**
      * Constructor of the service
      * @param router Angular's Router to redirect the user on login or logout
      * @param roleService NgxRolesService to manage authentication roles
      * @param permissionsService NgxPermissionsService to manage authentication permissions
      */
-    constructor (private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService) { }
+    constructor (private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http : HttpClient) { }
 
     start (): void {
         this.permissionsService.flushPermissions();
@@ -56,13 +65,10 @@ export class AuthService {
      * Logs the user in with the desired role
      * @param role The desired role to set to the user
      */
-    login (role): void {
-        if (role === 'Administrator') {
-            this.setAdministratorRole();
-        } else {
+    login (): void {
+        
             this.setClientRole()
-        }
-        this.router.navigateByUrl('/');
+    
     }
 
     /**
