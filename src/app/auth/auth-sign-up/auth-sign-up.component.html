@@ -1,27 +1,57 @@
-<div class="row">
-    <div class="col-6 offset-3">
-        <br>
-        <h2 class="text-center">Sign up</h2>
-        <br>
-        <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
-            <div class="form-group">
-                <label for="username"><b>Name</b></label>
-                <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.name" required>
-            </div>
-            <div class="form-group">
-                <label for="password"><b>Password</b></label>
-                <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
-            </div>
-            <div class="form-group">
-                <label for="role"><b>Role</b></label>
-                <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
-                    <option [value]="role" *ngFor="let role of roles">{{role}}</option>
-                </select>
-            </div>
-            <div class="justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary"> Sign Up</button>
-            </div>
-        </form>
-    </div>
-</div>
 
+  <div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign Up</label>
+		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Other options</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Name</label>
+					<input id="name" type="text" class="input">
+                </div>
+                <div class="group">
+					<label for="user" class="label">Username or Email</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+					<label for="user" class="label">Adress</label>
+					<input id="adress" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="for-pwd-htm">
+                <div class="text-center">
+                    <h4>With</h4>
+                    <p>
+                       <a class="btn btn-social btn-facebook">
+                          <i class="fa fa-facebook"></i> Sign in with Facebook
+                        </a>
+                    </p>
+                    <p>
+                        <a class="btn btn-social btn-facebook">
+                           <i class="fa fa-google-plus"></i> Sign in with Google+
+                         </a>
+                     </p>
+                     <p>
+                        <a class="btn btn-social btn-facebook">
+                           <i class="fa fa-twitter"></i> Sign in with Twitter
+                         </a>
+                     </p>
+
+                     <p>
+                        <a class="btn btn-social btn-facebook">
+                           <i class="fa fa-instagram"></i> Sign in with Instagram
+                         </a>
+                     </p>
+				<div class="hr"></div>
+			</div>
+		</div>
+	</div>
+</div>
